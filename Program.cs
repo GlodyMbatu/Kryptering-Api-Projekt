@@ -39,3 +39,27 @@ async Task<string> EncryptText(Stream requestBody)
     return encryptedText.ToString();
 
 }
+
+async Task<string> DecryptText(Stream requestBody)
+{
+    // request body_decrypt
+
+    using var reader = new StreamReader(requestBody);
+    string text = await reader.ReadToEndAsync();
+
+    // decrypt logic2
+
+    StringBuilder decryptedText = new StringBuilder();
+    foreach (char c in text)
+    {
+        decryptedText.Append((char)(c-3));
+    }
+
+    return decryptedText.ToString();
+
+
+
+
+}
+
+
