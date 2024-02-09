@@ -20,3 +20,22 @@ app.MapPost("/decrypt", async (HttpContext ctx) =>
 });
 
 app.Run();
+
+async Task<string> EncryptText(Stream requestBody)
+{
+    // request body
+
+    using var reader = new StreamReader(requestBody);
+    string text = await reader.ReadToEndAsync();
+
+    // encrypt logic2
+
+    StringBuilder encryptedText = new StringBuilder();
+    foreach (char c in text)
+    {
+        encryptedText.Append((char)(c+3));
+    }
+
+    return encryptedText.ToString();
+
+}
