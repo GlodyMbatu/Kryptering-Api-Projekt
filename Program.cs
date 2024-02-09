@@ -2,8 +2,11 @@ using Microsoft.Extensions.Hosting;
 using System.IO;
 using System.Text;
 
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+app.MapGet("/", () => "Hello!!");
 
 app.MapPost("/encrypt", async (HttpContext ctx) => 
 {
