@@ -55,4 +55,5 @@ async Task<string> DecryptText(Stream requestBody)
         decryptedText.Append((char)(c-3));
     }
 
-    return decryptedText.ToString();    }
+return decryptedText.ToString();
+}
