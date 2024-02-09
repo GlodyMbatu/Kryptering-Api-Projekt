@@ -6,7 +6,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello!!");
+app.MapGet("/", () => "Welcome to the encryption program");
 
 app.MapPost("/encrypt", async (HttpContext ctx) => 
 {
@@ -21,6 +21,7 @@ app.MapPost("/decrypt", async (HttpContext ctx) =>
     await ctx.Response.WriteAsync(decryptedText);
 
 });
+
 
 app.Run();
 
